@@ -1,0 +1,86 @@
+body{
+    display: relative;
+}
+
+.navbar{
+    padding-left: 300px;
+}
+.navbar-nav{
+    width: 100%;
+    padding-top: 40px;
+}
+.nav-item{
+    padding-left: 120px;
+    padding-right: 140px;
+}
+.collapse-shop{
+    list-style: none;
+    font-size: 20px;
+    padding: 0px;
+    display: absolute;
+
+}
+.nav-link{
+    padding: 0;
+}
+
+.nav-item ul{
+    padding: 0;
+}
+
+.nav-link{
+    padding: 0;
+}
+
+.navbar-brand{
+    height: 20px;
+    width: 20px;
+}
+
+.article-image{
+    height: 90%;
+    padding-left: 80px;
+    padding-top: 120px;
+}
+
+
+.article-image1{
+    width: 100%;
+}
+.article-image3{ 
+    width: 100%;
+    padding-top: 120px;
+    height: 90%;
+} 
+
+.article-brief-head{
+
+    display: flex;
+    justify-content: center;
+}
+
+.article-brief-head h2{
+    font-weight: bolder;
+    padding-bottom: 20px;
+}
+
+.article-brief-body p{
+        padding-top: 20px;
+		font-family: 'Avenir Next';
+		font-weight: bold;
+		font-size: 20px;
+		letter-spacing: 1.07px;
+		text-align: center;
+		line-height: 32px;
+		font-style: normal;
+        opacity: 0.5;
+        padding-bottom: 40px;
+
+}
+
+
+.button-article{
+    display: flex;
+    justify-content: center;
+    height: 60px;
+}
