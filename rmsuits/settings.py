@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'suits.apps.SuitsConfig'
+    'suits.apps.SuitsConfig',
+    'blazers.apps.BlazersConfig',
+    'shirts.apps.ShirtsConfig'
 ]
 
 MIDDLEWARE = [

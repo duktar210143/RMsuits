@@ -6,5 +6,5 @@ def index(request):
 
 
 
-def suits(request):
-    return render(request,"suits/index.html")
+
+
