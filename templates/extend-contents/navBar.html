@@ -16,7 +16,16 @@
     <section>
         <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <a href="#" class="navbar-brand" style="height: 100%; padding: 0; margin: 0;"><img src="/static/RMsuits_brand.png" alt="logo" style="height: 60px; width: 70px;"></a>
+            <a class="nav-link  dropbtn" href="#" id="navbarDropdown" data-bs-toggle="dropdown"
+            role="button" aria-expanded="false" style="font-size: 25px; padding-top: 10px;">
+            <div class="drop">
+                <img src="/static/RMsuits_brand.png" alt="logo" style="height: 60px; width: 70px;" id = "navbarDropdown" data-bs-toggle="dropdown" role="button">
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="margin-left: 500px;">
+                    <li>login</li>
+                    <li>logout</li>
+                </ul>
+            </div>
+            </a>
 
             <button 
             class="navbar-toggler"
@@ -48,9 +57,13 @@
                     <a href="#story" class="nav-link"><h3>story<h3></a>
                 </li>
             </ul>
-            <a href="/productcart_detail">
-            <img src="/static/store_style/cart.jpg" style="height: 60px; width: 60px;" alt="">
+            <h4 class="" style="font-size: 25px; padding-top: 10px; padding-right: 20px; opacity: 70%;">Cart</h4>
+            <a href="/productcart_detail"> 
+            <img src="/static/store_style/cart.jpg" style="height: 60px; width: 60px; ;" alt="">
             </a>
+            <div>
+                <span class="badge badge-secondary" style="color: black;">{{request.session.cart|length}}</span>
+            </div>
         </div>
         </nav>
 

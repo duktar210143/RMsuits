@@ -14,11 +14,11 @@ def login_page(request):
         )
         if user is not None:
             login(request,user)
-            return redirect("")
+            return redirect("/product")
         else:
-            return render("/user/login")
+            return redirect("/login")
     else:
-        return render(request, "users/login.html")
+        return render(request, "users/loginUser.html")
 
 def register_page(request):
     print(request.method)
@@ -33,3 +33,8 @@ def register_page(request):
     else:
         return render(request,"users/registerUser.html")
 
+def logout_fun(request):
+    logout(request)
+    return redirect(request,"/product")
+
+    

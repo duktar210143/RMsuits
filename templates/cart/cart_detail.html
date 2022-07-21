@@ -52,7 +52,7 @@
                             <p class="cart_total_price">${{value.price|multiply:value.quantity}}</p>
                         </td>
                         <td class="cart_delete">
-                            <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
+                            <a class="cart_quantity_delete" href="{% url 'item_clear' key%}" style="color: black;">Delete<i class="fa fa-times"></i></a>
                         </td>
                     </tr>
                     {% endfor %}

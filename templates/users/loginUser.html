@@ -1,0 +1,23 @@
+{% extends "extend-contents/navBar.html"%}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="" style="display: flex; justify-content: center;">
+<form action="" method="POST" style="margin-top:150px;">
+    {% csrf_token %}
+    <h3>Username</h3>
+  <input type="text" name="username" style="display: block; height: 40px; width: 400px; border: 2px solid ;">
+  <h3>Password</h3>
+ <input type="password" name="password" style="display: block; height: 40px; width: 400px; border: 2px solid;">
+    <input type="submit" value="login" style="border: 2px solid; margin-top: 50px; width: 230px; height: 40px; background-color: black; color: white;
+    font-size: 20px;">
+    <p>
+        dont have an account <
+            <a href="/user/register">Register</a>
+        > register
+    </p>
+</form>
+</div>
+</div>
+
+{% endblock content %}
