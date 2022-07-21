@@ -1,3 +1,4 @@
+from itertools import product
 from django.db import models
 
 # Create your models here.
@@ -12,3 +13,10 @@ class Product(models.Model):
 
     class Meta:
         db_table = "product"
+
+    def __str__(self):
+        return self.name
+    
+    @staticmethod
+    def get_product_by_id(ids):
+        return product.objects.filter(id__in = ids)

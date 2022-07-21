@@ -4,6 +4,7 @@ body{
 
 .navbar{
     padding-left: 300px;
+    height: 100px;
 }
 .navbar-nav{
     width: 100%;

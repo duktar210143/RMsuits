@@ -1,10 +1,12 @@
 {% extends "extend-contents/navBar.html"%}
+
 {% load cart_tag %}
+{% load static %}
 
 {% block content %}
 
-{% load static %}
-<link rel="stylesheet" href="/css/cart.css">
+<link rel="stylesheet" href="{% static '/css/cart.css'%}"/>
+
 
 <section id="cart_items">
     <div class="container">
@@ -14,10 +16,10 @@
               <li class="active">Shopping Cart</li>
             </ol>
         </div>
-        <div class="table-responsive cart_info" style="padding-top: 200px;">
+        <div class="table-responsive cart_info" style="padding-top: 40px;">
             <table class="table table-condensed">
                 <thead>
-                    <tr class="cart_menu">
+                    <tr class="cart_menu" style="background-color: black;">
                         <td class="image">Item</td>
                         <td class="description"></td>
                         <td class="price">Price</td>
@@ -30,24 +32,24 @@
                     {% for key,value in request.session.cart.items %}
                     <tr>
                         <td class="cart_product">
-                            <a href=""><img src="{{value.suit_image}}" alt=""></a>
+                            <a href=""><img src="{{value.image}}" style="height: 200px;"alt=""></a>
                         </td>
                         <td class="cart_description">
-                            <h4><a href="">{{value.suit_name}}</a></h4>
+                            <h4><a href="">{{value.name}}</a></h4>
                             <p>Web ID: 1089772</p>
                         </td>
                         <td class="cart_price">
-                            <p>{{value.suit_price}}</p>
+                            <p>${{value.price}}</p>
                         </td>
                         <td class="cart_quantity">
                             <div class="cart_quantity_button">
-                                <a class="cart_quantity_up" href=""> + </a>
-                                <input class="cart_quantity_input" type="text" name="quantity" value="1" autocomplete="off" size="2">
-                                <a class="cart_quantity_down" href=""> - </a>
+                                <a class="cart_quantity_up" href="{% url 'item_increment' value.product_id%}"> + </a>
+                                <input class="cart_quantity_input" type="text" name="quantity" value="{{value.quantity}}" autocomplete="off" size="" style="width: 100px;">
+                                <a class="cart_quantity_down" href="{% url 'item_decrement' value.product_id%}"> - </a>
                             </div>
                         </td>
                         <td class="cart_total">
-                            <p class="cart_total_price">$59</p>
+                            <p class="cart_total_price">${{value.price|multiply:value.quantity}}</p>
                         </td>
                         <td class="cart_delete">
                             <a class="cart_quantity_delete" href=""><i class="fa fa-times"></i></a>
@@ -55,8 +57,21 @@
                     </tr>
                     {% endfor %}
 
-                 
                 </tbody>
+                <tfoot>
+                    <td>
+
+                    </td><td>
+                    </td><td>
+                    </td><td>
+                        <h3>Subtotal</h3>
+                    </td>
+                    <td>
+                        <h4>
+                            ${{cart_total_amount}}
+                        </h4>
+                    </td>
+                </tfoot>
             </table>
         </div>
     </div>

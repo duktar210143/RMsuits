@@ -30,7 +30,6 @@ def item_increment(request, id):
     return redirect("cart_detail")
 
 
-
 def item_decrement(request, id):
     cart = Cart(request)
     product = Product.objects.get(id=id)
@@ -47,4 +46,4 @@ def cart_clear(request):
 
 
 def cart_detail(request):
-    return render(request, 'store/cart.html')
+    return render(request, 'cart/cart_detail.html')
