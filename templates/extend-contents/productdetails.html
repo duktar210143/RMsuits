@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+{% extends "extend-contents/navBar.html"%}
 <html lang="en">
+    {% block content %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,6 +15,7 @@
 
 </head>
 <body>
+    {% for product in product_desc %}
     <div class="content-wrap">
         <div class="content">
             <div class="container product-details">
@@ -26,12 +29,18 @@
                             </div>
                         </div>
                     </div>
-                            <div class="col-xs-12 col-lg-6">
+                            <div class="col-xs-12 col-lg-6 " style="margin-top: 150px; background-color: rgb(49, 49, 49); color: white;">
                                 <div class="details-block">
                                     <div class="pl-md-5 pt-5">
                                         <div class="heading-text">
+                                            <!-- {% block  brand %}{% endblock brand %}
                                             {% block head %}{% endblock head %}
+                                            {% block price %}{% endblock price %} -->
+                                            <img class="{{suit.image}}" src="" alt="" ">
+                                            <p class="head" >{{product.head}}</p>
+                                            <h2 class="desc"  style="font-weight: bolder; font-size: 40px; ">{{product.desc}}</h2>
                                         </div>
+                                        <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">add to cart</button>
                                     </div>
                                 </div>
                     </div>
@@ -39,6 +48,11 @@
             </div>
         </div>
     </div>
+
+    {% endfor %}
+
+    {% endblock content %}
+
     <script 
 src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " 
 integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 

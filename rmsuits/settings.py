@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 
-# Application definition
+# Application definition 
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -39,10 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'suits.apps.SuitsConfig',
     'blazers.apps.BlazersConfig',
-    'shirts.apps.ShirtsConfig'
+    'shirts.apps.ShirtsConfig',
+    'users.apps.UsersConfig',
+    'product.apps.ProductConfig',
+     'cart'
 ]
+
+CART_SESSION_ID = 'cart'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -67,6 +71,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                 'cart.context_processor.cart_total_amount',
             ],
         },
     },
@@ -80,8 +85,13 @@ WSGI_APPLICATION = 'rmsuits.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'RMsuits',
+        'HOST':'127.0.0.1',
+        'USER': 'root',
+        'PASSWORD':'',
+        'PORT':'3306'
+
     }
 }
 

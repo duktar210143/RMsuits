@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/register_style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    
+</head>
+<body>
+    <div class="container-wrap">
+        <div class="container">
+            <div class="flex-box">
+                <div class="d-md-flex">
+            <div class="modals user-form margin-center">
+                <h3 class="d-md-block d-sm-none">Create Your Account</h3>
+                <form action="" method="POST" action="" class="registerform">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <label for="fullname">Name:</label>
+                        <input type="text" id="name" name="fullname">
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Emali:</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                    <div class="form-row">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="form-row">
+                        <label for="password">Password:</label>
+                        <input type="password" name="password">
+                    </div>
+                    <input type="submit" value="register">
+                </form>
+            </div>
+        </div>
+        <div class="d-md-flex">
+            <img src="/static/signup-image.jpg" alt="">
+        </div>
+
+        </div>
+    </div>
+
+    <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js " 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
+    crossorigin="anonymous"    
+    ></script>
+
+</body>
+</html>

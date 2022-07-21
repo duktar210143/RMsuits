@@ -16,11 +16,14 @@ Including another URLconf
 # from xml.etree.ElementInclude import include
 # from django.contrib import admin
 from django.urls import include , path
+from django.contrib import admin
 
 urlpatterns = [
-    # path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),
     path("",include("home.urls")),
-    path("suits",include("suits.urls")),
+    path("product/",include("product.urls")),
     path("blazers",include("blazers.urls")),
-    path("shirts",include("shirts.urls"))
+    path("shirts",include("shirts.urls")),
+    path("user",include("users.urls")),
+    # path("cart",include("cart.urls"))
 ]
