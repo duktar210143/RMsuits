@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'suits/index.html', {'products':product})
 
 
-@login_required(login_url="/user/login")
+@login_required(login_url="/userlogin")
 def cart_add(request, id):
     cart = Cart(request)
     product = Product.objects.get(id=id)

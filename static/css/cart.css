@@ -121,7 +121,6 @@
     overflow: hidden;
     text-align: center;
     width: 35px;
-    float: left;
   }
   
   
@@ -232,8 +231,7 @@
     margin-right: 10px
   }
   
-  .user_info > li > span {
-  }
+
   
   .user_info input, select, textarea {
     background: #F0F0E9;

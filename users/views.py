@@ -29,12 +29,12 @@ def register_page(request):
             username = request.POST['username'],
             password = request.POST['password']
         )
-        return redirect("/user/login")
+        return redirect("/userlogin")
     else:
         return render(request,"users/registerUser.html")
 
 def logout_fun(request):
     logout(request)
-    return redirect(request,"/product")
+    return redirect("/product")
 
     
