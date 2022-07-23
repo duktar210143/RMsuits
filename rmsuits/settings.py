@@ -44,7 +44,6 @@ INSTALLED_APPS = [
     'shirts.apps.ShirtsConfig',
     'users.apps.UsersConfig',
     'product.apps.ProductConfig',
-    'order.apps.OrderConfig',
      'cart'
 ]
 
