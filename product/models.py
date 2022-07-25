@@ -9,13 +9,17 @@ import product
 class Product(models.Model):
     id = models.AutoField(auto_created=True,primary_key=True)
     suit_name = models.CharField(max_length=120)
-    suit_price = models.IntegerField(blank=True)
+    suit_price = models.CharField(max_length=130)
     suit_brand = models.CharField(max_length=100,blank=True)
     suit_desc = models.CharField(max_length=2000,blank=True)
     suit_image = models.FileField(upload_to="static/image",default="default.jpg")
 
     class Meta:
         db_table = "product"
+
+    def __str__(self):
+        return self.suit_name
+    
 
     
     # @staticmethod
@@ -35,7 +39,5 @@ class Order(models.Model):
 
     class Meta:
         db_table = "Order"
-    
-    def __str__(self):
-        return self.product
+
 
